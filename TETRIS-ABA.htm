@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://ahorabuenosaires.info/pacman/ -->
+<html lang="es" class="wf-pressstart2p-n4-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./TETRIS-ABA_files/analytics.js"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:url" content="https://ahorabuenosaires.info/pacman/">
+    <meta property="og:title" content="PACMAN del Inquilino :: AHORA Buenos Aires">
+    <meta property="og:description" content="Sumate, acercate, multiplicá. Contanos tus ideas, Aportá lo tuyo. Contagiate de lo nuevo que está llegando a la Ciudad. El momento es AHORA.">
+    <meta property="fb:app_id" content="921992321278230">
+    <meta property="og:video" content="https://ahorabuenosaires.info/static/video/fondo0.mp4">
+    <meta property="og:video:url" content="https://ahorabuenosaires.info/static/video/fondo0.mp4">
+    <meta property="og:video:secure_url" content="https://ahorabuenosaires.info/static/video/fondo0.mp4">
+    <meta property="og:video:type" content="video/mp4">
+    <meta property="og:video:width" content="720">
+    <meta property="og:video:height" content="406">
+    <meta property="og:image" content="https://ahorabuenosaires.info/static/img/ogimg2.jpg">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="866">
+    
+<link rel="apple-touch-icon" sizes="180x180" href="https://ahorabuenosaires.info/static/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://ahorabuenosaires.info/static/favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://ahorabuenosaires.info/static/favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="https://ahorabuenosaires.info/static/favicon/manifest.json">
+<link rel="mask-icon" href="https://ahorabuenosaires.info/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://ahorabuenosaires.info/static/favicon/favicon.ico">
+<meta name="msapplication-config" content="/static/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+      <script src="./TETRIS-ABA_files/1652729108346025" async=""></script><script async="" src="./TETRIS-ABA_files/fbevents.js"></script><script async="" src="./TETRIS-ABA_files/gtm.js"></script><script src="./TETRIS-ABA_files/jquery.min.js"></script>
+    <script src="./TETRIS-ABA_files/materialize.min.js"></script>
+    <script src="./TETRIS-ABA_files/ahora.js"></script>
+<!-- Pacman -->
+<script type="text/javascript" src="./TETRIS-ABA_files/jquery.min(1).js"></script>
+<script src="./TETRIS-ABA_files/pacman.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./TETRIS-ABA_files/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="./TETRIS-ABA_files/style.css">
+
+
+    <title>TETRIS-ABA</title>
+<!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-NMPZB3');</script>
+    <!-- End Google Tag Manager -->
+    <link href="./TETRIS-ABA_files/css" rel="stylesheet">
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1652729108346025');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>&lt;img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1652729108346025&amp;ev=PageView&amp;noscript=1"
+    /&gt;</noscript>
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code --><link rel="stylesheet" href="./TETRIS-ABA_files/fonts.css" media="all">
+</head>
+
+<body class="with-menu full full-container nuestras-cuatro-causas wide">
+    <!-- Google Tag Manager (noscript) -->
+      <noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMPZB3"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <noscript>
+        &lt;p class="warning"&gt;
+        Upa! Este juego no funciona sin javascript, por favor, habilitalo en tu navegador.
+        Gracias :)
+        &lt;/p&gt;
+    </noscript>
+    <span id="pacman-container" style="visibility: visible;">
+        <canvas id="pacman-canvas" class="pacman-body" width="500%" height="645%"></canvas>
+        <img id="pacman-start" class="pacman-body" src="./TETRIS-ABA_files/portada-inicio.jpg"> <br>
+        <a id="pacman-button-start" onclick="onStartButtonPress()" class="btn-flat">Inicio</a> <br>
+        <a id="pacman-button-ar" class="pacman-button modal-action modal-close waves-effect waves-green btn-flat ">Arriba</a> <br>
+        <a id="pacman-button-izq" class="pacman-button modal-action modal-close waves-effect waves-green btn-flat ">Izquierda</a>
+        <a id="pacman-button-der" class="pacman-button modal-action modal-close waves-effect waves-green btn-flat ">Derecha</a> <br>
+        <a id="pacman-button-ab" class="pacman-button modal-action modal-close waves-effect waves-green btn-flat ">Abajo</a> <br>
+    </span>
+
+
+
+<div class="modal-footer">
+    <img class="pacman-img" src="./TETRIS-ABA_files/referencias.png"> <br>
+    <a href="https://ahorabuenosaires.info/" id="button-back-pacman" class="modal-action modal-close waves-effect waves-green btn-flat ">Volver</a>
+</div>
+
+
+
+<script>
+(function($){
+    $(document).ready(function(){
+        $('.section').click(function(){
+            var target = $(this);
+            $('#'+target.attr('id')+'-modal').openModal();
+        });
+    });
+})(jQuery);
+</script>
+
+<!-- <div class="hiddendiv common"></div><div class="drag-target" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div></body></html> -->
+<div class="hiddendiv common"></div></body></html>
