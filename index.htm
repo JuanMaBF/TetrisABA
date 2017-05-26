@@ -30,9 +30,14 @@
       <script src="./Nuestras cuatro causas __ AHORA Buenos Aires_files/jquery.min.js"></script>
     <script src="./Nuestras cuatro causas __ AHORA Buenos Aires_files/materialize.min.js"></script>
     <script src="./Nuestras cuatro causas __ AHORA Buenos Aires_files/ahora.js"></script>
-<!-- Pacman -->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-<script src="pacman/pacman.js"></script>
+    
+<!-- Tetris (blockrain) -->
+<script src="blockrain/assets/js/jquery-1.11.1.min.js"></script>
+<script src="blockrain/src/blockrain.jquery.libs.js"></script>
+<script src="blockrain/src/blockrain.jquery.src.js"></script>
+<script src="blockrain/src/blockrain.jquery.themes.js"></script>
+<link rel="stylesheet" href="blockrain/src/blockrain.css">
+
 
     <link rel="stylesheet" type="text/css" href="https://ahorabuenosaires.info/static/materialize/dist/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="./Nuestras cuatro causas __ AHORA Buenos Aires_files/style.css">
@@ -77,20 +82,57 @@
         Gracias :)
         </p>
     </noscript>
-    <span id="pacman-container" style="visibility: hidden;">
-        <canvas id="pacman-canvas"  class="pacman-body" width="500%" height="645%"></canvas>
-        <img id="pacman-start" class="pacman-body" src="img/portada-inicio.jpg" > <br>
-        <a id="pacman-button-start" onclick="onStartButtonPress()" class="btn-flat">Inicio</a> <br>
-        <a id="pacman-button-ar" class="pacman-button modal-action modal-close waves-effect waves-green btn-flat ">Arriba</a> <br>
-        <a id="pacman-button-izq" class="pacman-button modal-action modal-close waves-effect waves-green btn-flat ">Izquierda</a>
-        <a id="pacman-button-der" class="pacman-button modal-action modal-close waves-effect waves-green btn-flat ">Derecha</a> <br>
-        <a id="pacman-button-ab" class="pacman-button modal-action modal-close waves-effect waves-green btn-flat ">Abajo</a> <br>
+    <span>
+    <div style="width:250px; height:500px;" class="game" id="tetris-demo"></div>
+  </article>
+
+
+<script>
+  var $demo = $('#tetris-demo').blockrain({
+    speed: 20,
+    theme: 'vim',
+    onStart: function() {
+      ga( 'send', 'event', 'tetris', 'started');
+    },
+    onLine: function() {
+      ga( 'send', 'event', 'tetris', 'line');
+    },
+    onGameOver: function(score){
+      ga( 'send', 'event', 'tetris', 'over', score);
+    }
+  });
+
+  $('#example-slider').find('.btn-next').click(function(event){
+    event.preventDefault();
+    switchDemoTheme(true);
+  });
+  $('#example-slider').find('.btn-prev').click(function(event){
+    event.preventDefault();
+    switchDemoTheme(false);
+  });
+
+  function switchDemoTheme(next) {
+
+    var themes = Object.keys(BlockrainThemes);
+
+    var currentTheme = $demo.blockrain('theme');
+    var currentIx = themes.indexOf(currentTheme);
+
+    if( next ) { currentIx++; }
+    else { currentIx--; }
+
+    if( currentIx >= themes.length ){ currentIx = 0; }
+    if( currentIx < 0 ){ currentIx = themes.length-1; }
+
+    $demo.blockrain('theme', themes[currentIx]);
+    $('#example-slider .theme strong').text( '"'+themes[currentIx]+'"' );
+  }
+</script>
     </span>
 
 
 
 <div class="modal-footer">
-    <img class='pacman-img' src="img/referencias.png" > <br>
     <a href="https://ahorabuenosaires.info/" id="button-back-pacman" class="modal-action modal-close waves-effect waves-green btn-flat ">Volver</a>
 </div>
 
