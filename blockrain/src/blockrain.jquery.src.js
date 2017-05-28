@@ -91,15 +91,11 @@
     },
 
     controls: function(enable) {
-      enable = true;
-      console.log('aguanten los redondos');
       if( typeof enable !== 'boolean' ){ enable = true; }
-      this._setupControls(true);
+      this._setupControls(enable);
     },
 
     touchControls: function(enable) {
-      enable = true;
-      console.log('aguanten los redondos');
       if( typeof enable !== 'boolean' ){ enable = true; }
       this._setupTouchControls(enable);
     },

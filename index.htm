@@ -83,17 +83,23 @@
         </p>
     </noscript>
     <span>
-    <div style="width:250px; height:500px;" id="tetris-demo"></div>
+    <div style="width:350px; height:600px;" id="tetris"></div>
   </article>
 
 
 <script>
-  var $demo = $('#tetris-demo').blockrain({
+  var $demo = $('#tetris').blockrain({
     speed: 20,
     theme: 'AHORABuenosAires'
   });
-  $demo.blockrain('touchControls', true);
-  //$demo.blockrain('touchControls', true);
+  $(window).resize(function(){
+    var enabledControls = false;
+    if($(window).width() <= 745){
+      enabledControls = true;
+    }
+    $demo.blockrain('touchControls', enabledControls);
+  });
+  
 </script>
     </span>
 
