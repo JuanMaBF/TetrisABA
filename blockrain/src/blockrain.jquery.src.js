@@ -17,11 +17,11 @@
       asdwKeys: true, // Enable ASDW keys
 
       // Copy
-      playText: 'Let\'s play some Tetris',
-      playButtonText: 'Play',
-      gameOverText: 'Game Over',
-      restartButtonText: 'Play Again',
-      scoreText: 'Score',
+      playText: 'Hacé entrar a la gente en hora pico',
+      playButtonText: 'Jugar',
+      gameOverText: 'Este subte nos queda chico!',
+      restartButtonText: 'Jugar otra vez',
+      scoreText: 'Puntaje',
 
       // Basic Callbacks
       onStart: function(){},

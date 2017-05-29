@@ -84,6 +84,8 @@
     </noscript>
     <span>
     <div style="width:350px; height:600px;" id="tetris"></div>
+    <br>
+    <a href="https://ahorabuenosaires.info/" class="modal-action modal-close waves-effect waves-green btn-flat ">Volver</a>
   </article>
 
 
@@ -94,7 +96,7 @@
   });
   $(window).resize(function(){
     var enabledControls = false;
-    if($(window).width() <= 745){
+    if($(window).width() <= 640){
       enabledControls = true;
     }
     $demo.blockrain('touchControls', enabledControls);
@@ -102,14 +104,6 @@
   
 </script>
     </span>
-
-
-
-<div class="modal-footer">
-    <a href="https://ahorabuenosaires.info/" id="button-back-pacman" class="modal-action modal-close waves-effect waves-green btn-flat ">Volver</a>
-</div>
-
-
 
 <script>
 (function($){
