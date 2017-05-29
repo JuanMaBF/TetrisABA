@@ -76,17 +76,15 @@
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <noscript>
-        <p class="warning">
-        Upa! Este juego no funciona sin javascript, por favor, habilitalo en tu navegador.
-        Gracias :)
-        </p>
-    </noscript>
-    <span>
-    <div style="width:350px; height:600px;" id="tetris"></div>
-    <br>
-    <a href="https://ahorabuenosaires.info/" class="modal-action modal-close waves-effect waves-green btn-flat ">Volver</a>
-  </article>
+  <noscript>
+      <p class="warning">
+      Upa! Este juego no funciona sin javascript, por favor, habilitalo en tu navegador.
+      Gracias :)
+      </p>
+  </noscript>
+  <span>
+  <div id="tetris"></div>
+  <a href="https://ahorabuenosaires.info/" id="tetris-back-button"class="modal-action modal-close waves-effect waves-green btn-flat ">Inicio</a>
 
 
 <script>
@@ -94,6 +92,9 @@
     speed: 20,
     theme: 'AHORABuenosAires'
   });
+  if($(window).width() <= 640){
+      $demo.blockrain('touchControls', true)
+  }
   $(window).resize(function(){
     var enabledControls = false;
     if($(window).width() <= 640){
