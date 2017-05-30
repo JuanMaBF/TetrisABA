@@ -2,38 +2,54 @@
 
 
 #tetris {
-    float: left;
-    border: rgba(94,34,95,.85) solid;
+    margin-left: auto;
+	margin-right: auto;
+}
+
+.tetris-body{
+	border: rgba(94,34,95,.85) solid;
     border-width: 7px;
     border-radius: 12px;
     background: #CCC;
 }
 
+#tetris-portada-container{
+	margin-bottom: -7px;
+}
+
+#tetris-button-start{
+    font-family: "Press Start 2P";
+    color: #FFF;
+    position: relative;
+    border-radius: 2px;
+    background: #8EBF44;
+    animation: blinker 0.5s linear infinite;
+}
+
 @media (min-width: 640px){
-	#tetris {
-		width:350px; 
-	    height:600px;
-	    margin-left: 35%;
-	    margin-top: -150px;
+	#tetris, #tetris-portada-container{
+	    margin-top: -170px;
 	}
 
 	#tetris-back-button{
-		margin-left: 60px;
-	    margin-top: 10px;
+		margin-left: auto;
+		margin-right: auto;
+	    margin-top: 20px;
 	    width: 280px;
 	    height: 50px;
 	    padding: 8px;
 	    font-size: 25px;
 	}
+
+	#tetris-button-start{
+		margin-top: -50%;
+	}
 }
 
 @media (max-width: 640px){
 
-	#tetris {
-	    margin-left: 14%;
+	#tetris, #tetris-portada-container{
 	    margin-top: -155px;
-	    width: 72%;
-	    height: 490px;
 	}
 
 	#tetris-back-button{
@@ -43,5 +59,8 @@
 	    padding: 8px;
 	    font-size: 25px;
 	}
-    
+
+	#tetris-button-start{
+		margin-top: -100%;
+	}
 }

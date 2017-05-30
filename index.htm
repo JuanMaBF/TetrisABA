@@ -81,10 +81,15 @@
       Upa! Este juego no funciona sin javascript, por favor, habilitalo en tu navegador.
       Gracias :)
       </p>
-  </noscript>
-  <span>
-  <div id="tetris"></div>
-  <a href="https://ahorabuenosaires.info/" id="tetris-back-button"class="modal-action modal-close waves-effect waves-green btn-flat ">Inicio</a>
+  </noscript> 
+  <span id="tetris-display" style="display: none;">
+    <div id="tetris" class="tetris-body" style="width:350px; height:600px;"></div>
+  </span>
+  <div id="tetris-portada-container">
+    <img src="img/portada-inicio.png" style="width:350px; height:600px;" id="tetris-start-panel" class="tetris-body">
+  </div>
+  <a onclick="makeVisible()" id="tetris-button-start" onclick="onStartButtonPress()" class="btn-flat">Inicio</a> <br>
+  <a href="https://ahorabuenosaires.info/" id="tetris-back-button"class="modal-action modal-close waves-effect waves-green btn-flat ">Volver</a>
 
 
 <script>
@@ -93,15 +98,29 @@
     theme: 'AHORABuenosAires'
   });
   if($(window).width() <= 640){
-      $demo.blockrain('touchControls', true)
+      $demo.blockrain('touchControls', true);
+      $("#tetris").attr('style', "width: 70%; height: auto;");
+      $("#tetris-start-panel").attr('style', "width: 70%; height: auto;");
   }
   $(window).resize(function(){
     var enabledControls = false;
     if($(window).width() <= 640){
       enabledControls = true;
+      $("#tetris").attr('style', "width: 70%; height: auto;");
+      $("#tetris-start-panel").attr('style', "width: 70%; height: auto;");
+    }else{
+      $("#tetris").attr('style', "width:350px; height:600px;");
+      $("#tetris-start-panel").attr('style', "width:350px; height:600px;");
     }
     $demo.blockrain('touchControls', enabledControls);
   });
+
+  function makeVisible(){
+    $("#tetris-display").attr('style', "");
+    $("#tetris-portada-container").attr('style', "display: none;");
+    $("#tetris-button-start").attr('style', "display: none;");
+    $demo.blockrain('start');
+  }
   
 </script>
     </span>
