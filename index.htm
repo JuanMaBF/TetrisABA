@@ -121,6 +121,13 @@
     $("#tetris-button-start").attr('style', "display: none;");
     $demo.blockrain('start');
   }
+
+  function redirect(){
+    window.location.replace("http://stackoverflow.com");
+  }
+
+  $(".blockrain-game-over")[0].innerHTML = "<a onclick=\"makeVisible()\" class=\"tetris-button blockrain-btn blockrain-game-over-btn\">Jugar otra vez</a><br><br>";
+  $(".blockrain-game-over")[0].innerHTML += "<a onclick=\"redirect()\" class=\"tetris-button blockrain-btn blockrain-game-over-btn\">Nuestras propuestas</a>";
   
 </script>
     </span>

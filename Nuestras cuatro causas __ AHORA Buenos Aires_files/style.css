@@ -26,6 +26,25 @@
     animation: blinker 0.5s linear infinite;
 }
 
+canvas{
+	background: url('../img/portada-inicio.png') no-repeat;
+    background-size: 100%;
+}
+
+.blockrain-game-over-msg, .blockrain-btn{
+	font-family: "Press Start 2P";
+	font-size: 13px;
+	padding: 10px;
+	border: 0px;
+}
+
+.tetris-button{
+	font-family: "Press Start 2P";
+    color: #FFF;
+	border-radius: 2px;
+    background: #8EBF44;
+}
+
 @media (min-width: 640px){
 	#tetris, #tetris-portada-container{
 	    margin-top: -170px;

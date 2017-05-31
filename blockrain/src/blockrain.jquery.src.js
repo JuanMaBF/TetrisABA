@@ -177,6 +177,9 @@
         }
         this._board.render();
       }
+
+      //this._$canvas.css('background-image', "url('https://www.w3schools.com/cssref/paper.gif')");
+
     },
 
 
