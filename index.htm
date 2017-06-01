@@ -85,12 +85,15 @@
   <span id="tetris-display" style="display: none;">
     <div id="tetris" class="tetris-body" style="width:350px; height:600px;"></div>
   </span>
-  <div id="tetris-portada-container">
+  <div class="tetris-portada-container" id="portada-inicio">
     <img src="img/portada-inicio.png" style="width:350px; height:600px;" id="tetris-start-panel" class="tetris-body">
   </div>
-  <div id="tetris-portada-container" id="portada-final" style="display: none;">
-    <img src="img/placa-final.png" style="width:350px; height:600px;" id="tetris-start-panel" class="tetris-body">
+  <div class="tetris-portada-container" id="portada-final" style="display: none;">
+    <img src="img/placa-final.png" style="width:350px; height:600px;" id="tetris-end-panel" class="tetris-body">
   </div>
+
+  <a onclick="redirect()" class="tetris-button" id="propuestas" style="display: none;">Nuestras propuestas</a> <br><br>
+  <a onclick="makeVisible()" class="tetris-button" id="play-again" style="display: none;">Jugar otra vez</a>
 
   <a onclick="makeVisible()" id="tetris-button-start" onclick="onStartButtonPress()" class="btn-flat">Inicio</a> <br>
   <a href="https://ahorabuenosaires.info/" id="tetris-back-button"class="modal-action modal-close waves-effect waves-green btn-flat ">Volver</a>
@@ -101,14 +104,18 @@
     speed: 20,
     theme: 'AHORABuenosAires',
     onGameOver: function() {
-      $("#tetris-display").attr('style', "none");
+      $("#tetris-display").attr('style', "display: none;");
+      console.log($("#portada-final"));
       $("#portada-final").attr('style', "");
+      $("#play-again").attr('style', "");
+      $("#propuestas").attr('style', "");
     }
   });
   if($(window).width() <= 640){
       $demo.blockrain('touchControls', true);
       $("#tetris").attr('style', "width: 70%; height: auto;");
       $("#tetris-start-panel").attr('style', "width: 70%; height: auto;");
+      $("#tetris-end-panel").attr('style', "width: 70%; height: auto;");
   }
   $(window).resize(function(){
     var enabledControls = false;
@@ -116,16 +123,19 @@
       enabledControls = true;
       $("#tetris").attr('style', "width: 70%; height: auto;");
       $("#tetris-start-panel").attr('style', "width: 70%; height: auto;");
+      $("#tetris-end-panel").attr('style', "width: 70%; height: auto;");
     }else{
       $("#tetris").attr('style', "width:350px; height:600px;");
       $("#tetris-start-panel").attr('style', "width:350px; height:600px;");
+      $("#tetris-end-panel").attr('style', "width:350px; height:600px;");
     }
     $demo.blockrain('touchControls', enabledControls);
   });
 
   function makeVisible(){
     $("#tetris-display").attr('style', "");
-    $("#tetris-portada-container").attr('style', "display: none;");
+    $("#portada-inicio").attr('style', "display: none;");
+    $("#portada-final").attr('style', "display: none;");
     $("#tetris-button-start").attr('style', "display: none;");
     $demo.blockrain('start');
   }
@@ -133,9 +143,6 @@
   function redirect(){
     window.location.replace("https://ahorabuenosaires.info/propuestas/este-subte-queda-chico/");
   }
-
-  $(".blockrain-game-over")[0].innerHTML = "<a onclick=\"makeVisible()\" class=\"tetris-button\">Jugar otra vez</a><br><br>";
-  $(".blockrain-game-over")[0].innerHTML += "<a onclick=\"redirect()\" class=\"tetris-button\">Nuestras propuestas</a>";
   
 </script>
     </span>

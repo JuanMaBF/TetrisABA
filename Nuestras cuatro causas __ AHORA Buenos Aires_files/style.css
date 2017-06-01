@@ -13,7 +13,7 @@
     background: #CCC;
 }
 
-#tetris-portada-container{
+.tetris-portada-container{
 	margin-bottom: -7px;
 }
 
@@ -41,6 +41,8 @@ canvas{
 	border-radius: 2px;
     background: #8EBF44;
     padding: 10px;
+    top: -110px;
+    position: inherit;
 }
 
 #tetris-button-start{
@@ -48,7 +50,7 @@ canvas{
 }
 
 @media (min-width: 640px){
-	#tetris, #tetris-portada-container{
+	#tetris, .tetris-portada-container{
 	    margin-top: -170px;
 	}
 
@@ -62,14 +64,23 @@ canvas{
 	    font-size: 25px;
 	}
 
+	.tetris-button{
+	    font-size: large;
+	}
+
+	.tetris-button:hover{
+	    cursor: pointer;
+	}
+
 	#tetris-button-start{
 		margin-top: -20%;
+		font-size: 28px;
 	}
 }
 
 @media (max-width: 640px){
 
-	#tetris, #tetris-portada-container{
+	#tetris, .tetris-portada-container{
 	    margin-top: -155px;
 	}
 
@@ -82,7 +93,7 @@ canvas{
 	}
 
 	#tetris-button-start{
-		margin-top: -35%;
+		margin-top: -55%;
     	font-size: 20px;
 	}
 
@@ -111,4 +122,10 @@ canvas{
 	    content: "⬇";
 	}
 
+}
+
+@media (max-width: 400px){
+	.tetris-button{
+    	top: -85px;
+	}
 }
