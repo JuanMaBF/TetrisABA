@@ -88,6 +88,10 @@
   <div id="tetris-portada-container">
     <img src="img/portada-inicio.png" style="width:350px; height:600px;" id="tetris-start-panel" class="tetris-body">
   </div>
+  <div id="tetris-portada-container" id="portada-final" style="display: none;">
+    <img src="img/placa-final.png" style="width:350px; height:600px;" id="tetris-start-panel" class="tetris-body">
+  </div>
+
   <a onclick="makeVisible()" id="tetris-button-start" onclick="onStartButtonPress()" class="btn-flat">Inicio</a> <br>
   <a href="https://ahorabuenosaires.info/" id="tetris-back-button"class="modal-action modal-close waves-effect waves-green btn-flat ">Volver</a>
 
@@ -95,7 +99,11 @@
 <script>
   var $demo = $('#tetris').blockrain({
     speed: 20,
-    theme: 'AHORABuenosAires'
+    theme: 'AHORABuenosAires',
+    onGameOver: function() {
+      $("#tetris-display").attr('style', "none");
+      $("#portada-final").attr('style', "");
+    }
   });
   if($(window).width() <= 640){
       $demo.blockrain('touchControls', true);
@@ -123,11 +131,11 @@
   }
 
   function redirect(){
-    window.location.replace("http://stackoverflow.com");
+    window.location.replace("https://ahorabuenosaires.info/propuestas/este-subte-queda-chico/");
   }
 
-  $(".blockrain-game-over")[0].innerHTML = "<a onclick=\"makeVisible()\" class=\"tetris-button blockrain-btn blockrain-game-over-btn\">Jugar otra vez</a><br><br>";
-  $(".blockrain-game-over")[0].innerHTML += "<a onclick=\"redirect()\" class=\"tetris-button blockrain-btn blockrain-game-over-btn\">Nuestras propuestas</a>";
+  $(".blockrain-game-over")[0].innerHTML = "<a onclick=\"makeVisible()\" class=\"tetris-button\">Jugar otra vez</a><br><br>";
+  $(".blockrain-game-over")[0].innerHTML += "<a onclick=\"redirect()\" class=\"tetris-button\">Nuestras propuestas</a>";
   
 </script>
     </span>
